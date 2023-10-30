@@ -12,10 +12,3 @@
 }
 
 
-@media only screen and (min-width: 320px) {
-    .column {
-        border: black solid 1px; 
-        width: 1em;
-        height: 1em;
-    }
-}
