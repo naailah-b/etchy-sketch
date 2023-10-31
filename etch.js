@@ -1,15 +1,29 @@
 const container = document.querySelector('#container');
 let rows = document.getElementsByClassName("row");
 let counter = 0;
-let loopy = 0;
+let loopy = 0; 
+let num1, num2;
 
-function createGrid() {
+document.getElementById('btnPrompt').addEventListener('click', () => {
+    num1 = Number(prompt('Enter the number of rows '));
+    num2 = Number(prompt('Enter the number of columns '));
+    createGrid();
+})
+
+function defaultGrid() {
     makeRows(16);
     makeColumns(16);
     colorTrail(16, 16);
 }
 
+function createGrid() {
+    makeRows(num1);
+    makeColumns(num2);
+    colorTrail(num1, num2);
+}
+
 function makeRows(rInput) {
+    console.log(rInput)
     for (i = 0; i < rInput; i++) {
         let row = document.createElement('div');
         container.appendChild(row).className = "row";
@@ -38,8 +52,7 @@ function colors(event) {
     this.style.backgroundColor = 'black';
 }
 
-createGrid();
-//heart();
+defaultGrid();
 
 let ids = ['35', '36', '37', '42', '43', '44', '50', '51', '52', '53', '54', '57', 
 '58', '59', '60', '61', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74',
