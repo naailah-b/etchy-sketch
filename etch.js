@@ -6,7 +6,15 @@ let num1, num2;
 
 document.getElementById('btnPrompt').addEventListener('click', () => {
     num1 = Number(prompt('Enter the number of rows '));
+    if(num1 > 50) {
+        num1 = Number(prompt('Please enter a number lower than 50'));
+    }
+
     num2 = Number(prompt('Enter the number of columns '));
+    if(num2 > 50) {
+        num2 = Number(prompt('Please enter a number lower than 50'));
+    }
+    
     delGrid();
     createGrid();
 })
@@ -25,11 +33,12 @@ function createGrid() {
 }
 
 function delGrid() {
-    document.getElementById('container').innerHTML = ''
+    document.getElementById('container').innerHTML = '';
+    counter = 0;
+    loopy = 0;
 }
 
 function makeRows(rInput) {
-    console.log(rInput)
     for (i = 0; i < rInput; i++) {
         let row = document.createElement('div');
         container.appendChild(row).className = "row";
@@ -56,6 +65,7 @@ function colorTrail(row, column) {
 
 function colors(event) {
     this.style.backgroundColor = 'black';
+    console.log('hii')
 }
 
 function heart() {

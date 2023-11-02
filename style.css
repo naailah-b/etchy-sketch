@@ -1,25 +1,33 @@
 
-
-#biggerContainer {
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 90vh;
+    justify-content: space-around;
 }
 
+#btnPrompt {
+    border-radius: 4px;
+    padding: 10px; 
+    background-color: rgb(125, 147, 160);
+    color: white;
+}
 
 #container {
     display: flex;    
-    align-items: center;
-    justify-content: center;
-    width: 800px;
-    height: 800px;
+    width: 600px;
+    height: 600px;
 }
 
 .column {
+    display: flex;
+    flex: 1 1 0;
     border: black solid 1px; 
-    width: 30px;
-    height: 30px;
 }
 
-
+.row {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0; 
+}
